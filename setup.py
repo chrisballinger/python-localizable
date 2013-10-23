@@ -32,7 +32,7 @@ def get_requirements(filename):
 requirements, dependency_links = get_requirements('requirements.txt')
 
 setup(name='localizable',
-      version='0.1',
+      version='0.1.1',
       description='Localizable.strings parser for Apple-specific localization files',
       author='Chris Ballinger',
       author_email='chris@chatsecure.org',
