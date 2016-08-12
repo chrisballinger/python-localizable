@@ -40,7 +40,7 @@ def _get_content(filename=None, content=None):
     return _get_content_from_file(filename, format_encoding)
 
 def _get_content_from_file(filename, encoding):
-    f = open(filename, 'r')
+    f = open(filename, 'rb')
     try:
         content = f.read()
         if chardet.detect(content)['encoding'].startswith(format_encoding):
@@ -52,11 +52,11 @@ def _get_content_from_file(filename, encoding):
         f.close()
         f = codecs.open(filename, 'r', encoding=encoding)
         return f.read()
-    except IOError, e:
-        print "Error opening file %s with encoding %s: %s" %\
-                (filename, format_encoding, e.message)
-    except Exception, e:
-        print "Unhandled exception: %s" % e.message
+    except IOError as e:
+        print("Error opening file %s with encoding %s: %s" %\
+                (filename, format_encoding, e.message))
+    except Exception as e:
+        print("Unhandled exception: %s" % e.message)
     finally:
         f.close()
 
@@ -94,8 +94,8 @@ def parse_strings(content="", filename=None):
         while end < start:
             m = c.match(f, end, start) or ws.match(f, end, start)
             if not m or m.start() != end:
-                print "Invalid syntax: %s" %\
-                        f[end:start]
+                print("Invalid syntax: %s" %\
+                        f[end:start])
             end = m.end()
         end = end_
         key = _unescape_key(key)
