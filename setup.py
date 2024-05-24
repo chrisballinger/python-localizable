@@ -9,6 +9,7 @@ setup(name='localizable',
       url='https://github.com/chrisballinger/python-localizable',
       license="GPLv2",
       long_description=open('README.md').read(),
+	  long_description_content_type='text/markdown',
       py_modules=['localizable'],
       install_requires=[
         'chardet',
