@@ -2,7 +2,7 @@
 from distutils.core import setup
 
 setup(name='localizable',
-      version='0.1.2',
+      version='0.1.3',
       description='Localizable.strings parser for Apple-specific localization files',
       author='Chris Ballinger',
       author_email='chris@chatsecure.org',
